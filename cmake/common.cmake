@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
+target_compile_features(astral-life PRIVATE cxx_std_17)
 if(MSVC)
     target_compile_options(astral-life PRIVATE
         /W4 /permissive- /WX
