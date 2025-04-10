@@ -27,3 +27,5 @@ target_link_libraries(astral-life PRIVATE
     Freetype::Freetype
 )
 endif()
+
+file(COPY res DESTINATION ${CMAKE_CURRENT_BINARY_DIR})
