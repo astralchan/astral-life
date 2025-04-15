@@ -16,5 +16,6 @@ for %%A in (%*) do (
 
 if not defined BUILD_TYPE set BUILD_TYPE=Release
 
-cmake -B build -DCMAKE_BUILD_TYPE=%BUILD_TYPE%
-cmake --build build --config %BUILD_TYPE% --parallel %NUMBER_OF_PROCESSORS%
+cmake -B "build" -DCMAKE_BUILD_TYPE="%BUILD_TYPE%"
+cmake --build "build" --config "%BUILD_TYPE%" ^
+    --parallel "%NUMBER_OF_PROCESSORS%"
