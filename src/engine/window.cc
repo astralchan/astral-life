@@ -27,6 +27,14 @@ Window::Window(int width, int height, const std::string& title,
     std::cerr << "Created window (" << m_title << "): " << m_width << ", " <<
             m_height << std::endl;
 #endif
+
+    glfwSetWindowUserPointer(m_window.get(), this);
+    glfwSetFramebufferSizeCallback(m_window.get(), [](GLFWwindow* window,
+            int width, int height) {
+        auto* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
+        self->m_width = width;
+        self->m_height = height;
+    });
 }
 
 int Window::getWidth() const {
