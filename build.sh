@@ -10,10 +10,11 @@ for arg; do
             printf "Error: Unknown option %s\n" "$arg"
             printf "Usage: %s [--debug | --release]\n" "$0"
             exit 1
+            ;;
     esac
 done
 
 : "${BUILD_TYPE:=Release}"
 
-cmake -B build -DCMAKE_BUILD_TYPE=${BUILD_TYPE}
-cmake --build build --config ${BUILD_TYPE} --parallel $(nproc --all)
+cmake -B build -DCMAKE_BUILD_TYPE="${BUILD_TYPE}"
+cmake --build build --config "${BUILD_TYPE}" --parallel "$(nproc --all)"
