@@ -2,6 +2,60 @@
 
 WIP game
 
+## Build
+
+```
+git clone https://github.com/astralchan/astral-life.git
+cd astral-life
+```
+
+### Unix
+
+```
+./build.sh
+```
+
+Optionally specify `--release` (default) or `--debug`.
+
+#### vcpkg
+
+To test vcpkg builds on unix, specify `--vcpkg`.
+
+### Windows
+
+Install [VS BuildTools](https://visualstudio.microsoft.com/downloads/)
+and [vcpkg](https://learn.microsoft.com/en-us/vcpkg/get_started/get-started).
+
+Open the VS Developer Command Prompt and `cd` to the repository.
+
+```
+.\build.bat
+```
+
+Optionally specify `--release` (default) or `--debug`.
+
+## Run
+
+### Unix
+
+```
+./build/astral-life
+```
+
+### Windows
+
+#### Release (default)
+
+```
+.\build\Release\astral-life.exe
+```
+
+#### Debug
+
+```
+.\build\Debug\astral-life.exe
+```
+
 ## License
 
 ![gplv3-or-later](./.img/gplv3-or-later.png)
