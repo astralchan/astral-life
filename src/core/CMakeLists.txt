@@ -2,4 +2,6 @@
 
 target_sources(${TARGET_NAME} PRIVATE
   app.cc
+  window.cc
+  input-context.cc
 )
