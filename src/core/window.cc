@@ -34,8 +34,8 @@ Window::Window(uint32_t width, uint32_t height, const std::string& title,
       m_handle.get(), [](GLFWwindow* window, int width, int height) {
         Window* self = static_cast<Window*>(glfwGetWindowUserPointer(window));
 
-        self->m_width = width;
-        self->m_height = height;
+        self->m_width = static_cast<uint32_t>(width);
+        self->m_height = static_cast<uint32_t>(height);
   });
 }
 
