@@ -11,6 +11,16 @@ cd astral-life
 
 ### Unix
 
+On mac, install [brew](https://brew.sh) and run:
+
+```
+brew bundle
+```
+
+On linux, install the devel packages for the dependencies.
+
+Then, run:
+
 ```
 ./build.sh
 ```
