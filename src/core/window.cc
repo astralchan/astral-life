@@ -15,16 +15,18 @@ Window::Window(uint32_t width, uint32_t height, const std::string& title,
                const std::shared_ptr<GLFWmonitor>& monitor,
                const std::shared_ptr<GLFWwindow>& share)
     : m_handle(
-          glfwCreateWindow(static_cast<int>(width),
-                           static_cast<int>(height), title.c_str(),
-                           monitor.get(), share.get()),
+          [&width, &height, &title, &monitor, &share]() {
+            glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+            return glfwCreateWindow(static_cast<int>(width),
+                                    static_cast<int>(height), title.c_str(),
+                                    monitor.get(), share.get());
+          }(),
           glfwDestroyWindow),
       m_width(width),
       m_height(height),
       m_title(title),
       m_monitor(monitor),
       m_share(share) {
-
   if (m_handle.get() == nullptr)
     throw std::runtime_error("Failed to create window");
 
@@ -36,28 +38,20 @@ Window::Window(uint32_t width, uint32_t height, const std::string& title,
 
         self->m_width = static_cast<uint32_t>(width);
         self->m_height = static_cast<uint32_t>(height);
-  });
+      });
 }
 
-uint32_t Window::getWidth() const {
-  return m_width;
-}
+uint32_t Window::getWidth() const { return m_width; }
 
-uint32_t Window::getHeight() const {
-  return m_height;
-}
+uint32_t Window::getHeight() const { return m_height; }
 
-std::string Window::getTitle() const {
-  return m_title;
-}
+std::string Window::getTitle() const { return m_title; }
 
 void Window::makeContextCurrent() const {
   glfwMakeContextCurrent(m_handle.get());
 }
 
-void Window::swapBuffers() const {
-  glfwSwapBuffers(m_handle.get());
-}
+void Window::swapBuffers() const { glfwSwapBuffers(m_handle.get()); }
 
 bool Window::shouldClose() const {
   return glfwWindowShouldClose(m_handle.get()) == GLFW_TRUE;
@@ -68,4 +62,4 @@ void Window::setShouldClose(bool shouldClose) const {
                            shouldClose ? GLFW_TRUE : GLFW_FALSE);
 }
 
-} // namespace AL::Core
+}  // namespace AL::Core
