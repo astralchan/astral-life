@@ -5,11 +5,11 @@
 namespace AL::Core {
 
 class InputContext {
-public:
+ public:
   InputContext();
   ~InputContext();
 
   void pollEvents() const;
-}; // class InputContext
+};  // class InputContext
 
-} // namespace AL::Core
+}  // namespace AL::Core

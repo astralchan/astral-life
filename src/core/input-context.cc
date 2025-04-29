@@ -13,12 +13,8 @@ InputContext::InputContext() {
     throw std::runtime_error("Failed to initialize GLFW");
 }
 
-InputContext::~InputContext() {
-  glfwTerminate();
-}
+InputContext::~InputContext() { glfwTerminate(); }
 
-void InputContext::pollEvents() const {
-  glfwPollEvents();
-}
+void InputContext::pollEvents() const { glfwPollEvents(); }
 
-} // namespace AL::Core
+}  // namespace AL::Core

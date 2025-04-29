@@ -5,11 +5,11 @@
 namespace AL::Core {
 
 class App {
-public:
+ public:
   App() = default;
   ~App() = default;
 
   void run();
-}; // class App
+};  // class App
 
-} // namespace AL::Core
+}  // namespace AL::Core

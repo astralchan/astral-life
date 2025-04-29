@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 
 #include <cstdlib>
-#include <iostream>
 #include <exception>
+#include <iostream>
 
 #include "core/app.hh"
 

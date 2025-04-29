@@ -19,4 +19,4 @@ void App::run() {
   }
 }
 
-} // namespace AL::Core
+}  // namespace AL::Core
