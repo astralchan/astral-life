@@ -1,1 +1,6 @@
 brew "glfw"
+brew "vulkan-headers"
+brew "vulkan-loader"
+brew "glslang"
+brew "spirv-tools"
+brew "vulkan-validationlayers"

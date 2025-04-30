@@ -1,5 +1,10 @@
 {
   "dependencies": [
-    "glfw3"
+    "glfw3",
+    "glslang",
+    "spirv-tools",
+    "vulkan-headers",
+    "vulkan-loader",
+    "vulkan-validationlayers"
   ]
 }

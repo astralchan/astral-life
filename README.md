@@ -4,6 +4,15 @@ WIP game
 
 ## Build
 
+### Dependencies
+
+ * glfw
+ * vulkan-headers
+ * vulkan-loader
+ * glslang
+ * spirv-tools
+ * vulkan-validationlayers
+
 ```
 git clone https://github.com/astralchan/astral-life.git
 cd astral-life
